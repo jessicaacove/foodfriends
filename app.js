@@ -5,7 +5,9 @@ const logger       = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
-
+const mongoose     = require('mongoose');
+const session      = require('express-session');
+const passport     = require('passport');
 
 const app = express();
 
@@ -27,6 +29,9 @@ app.use(layouts);
 
 const index = require('./routes/index');
 app.use('/', index);
+
+const myAuthRoutes = require('./routes/auth-routes.js');
+app.use('/', myAuthRoutes);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

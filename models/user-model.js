@@ -20,12 +20,12 @@ const UserSchema = new Schema(
     type: String
   },
   googleId: {
-    type: Strimg
+    type: String
   },
   facebookId: {
     type: String
   },
-}); 
+});
 
 
 

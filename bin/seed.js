@@ -25,7 +25,7 @@ Restaurant.create(
   restaurantInfoArray,               // 1st arg -> array of product info objects
   (err, restaurantResults) => {      // 2nd arg -> callback
     if (err) {
-      console.log('OMG! Database error.');
+      console.log('Database error.');
       return;
     }
 
