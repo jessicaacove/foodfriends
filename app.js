@@ -9,7 +9,12 @@ const mongoose     = require('mongoose');
 const session      = require('express-session');
 const passport     = require('passport');
 
+require('./config/passport-config.js');
+
+mongoose.connect('mongodb://localhost/foodfriends');
+
 const app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,12 +31,39 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
+app.use(session({
+  secret: 'lfakrghaldcjknskaksdjnasfrrhsnclasncfdbafyhfhj', // secret doesnt matter as long as its unique for each app.js file
+  resave: true,
+  saveUninitialized: true
+}));   // 2 parentheses: 1 for "app.use(" and another for "session("
+// passport middleware comes after session middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// This MIDDLEWARE CREATES the "currentUser" for all views
+// (if the user is logged in)
+// (this needs to be below passport and before your routes)
+app.use((req, res, next) => {
+  // "req.user" is defined by the passport middleware
+  // If the user is NOT logged in, "req.user will be empty
+
+  // Check if the user IS logged in
+  if (req.user) {
+    // Create the "currentUser" local variable for all views
+    res.locals.currentUser = req.user;
+  }
+  // if you dont do next your app will hang
+  next();
+});
 
 const index = require('./routes/index');
 app.use('/', index);
 
 const myAuthRoutes = require('./routes/auth-routes.js');
 app.use('/', myAuthRoutes);
+
+const myRestaurantRoutes = require('./routes/restaurant-routes.js');
+app.use('/', myRestaurantRoutes);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

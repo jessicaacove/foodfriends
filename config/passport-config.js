@@ -79,117 +79,117 @@ passport.use(new LocalStrategy(
 ));
 
 //passport-facebook (log in with your Facebook account)
-const FbStrategy = require('passport-facebook').Strategy;
-
-passport.use(new FbStrategy(
-  {   // 1st arg -> settings object
-    clientID: '1446689522091550',
-    clientSecret: '81e92a86b36fee508a869545802fc0e7',
-    callbackURL: '/auth/facebook/callback'    // our route (made up whatever)
-  },
-
-  (accessToken, refreshToken, profile, next) => {   // 2nd arg -> callback
-            // (will be called when a user allows us to log them in with Facebook)
-      console.log('');
-      console.log('--------FACEBOOK PROFILE INFO---------------');
-      console.log('profile');
-      console.log('');
-
-      UserModel.findOne(
-        { facebookId: profile.id },
-
-        (err, userFromDb) => {
-          if (err) {
-            next(err);
-            return;
-          }
-          // "userFromDb" will be empty if this is the first time the user logs in with Facebook,
-
-          //Check if they have logged in before
-          if (userFromDb) {
-            //If they have, just log them in
-            next(null, userFromDb);
-            return;
-          }
-
-          // If its the first time they log in , Save them in the database
-          const theUser = new UserModel({
-            fullName: profile.displayName,
-            facebookId: profile.id
-          });
-
-          theUser.save((err) => {
-            if (err) {
-              next(err);
-              return;
-            }
-
-            // Now that they are saved, log them in.
-            next(null, theUser);
-
-          });
-        }
-      );
-
-  }
-));
+// const FbStrategy = require('passport-facebook').Strategy;
+//
+// passport.use(new FbStrategy(
+//   {   // 1st arg -> settings object
+//     clientID: '1446689522091550',
+//     clientSecret: '81e92a86b36fee508a869545802fc0e7',
+//     callbackURL: '/auth/facebook/callback'    // our route (made up whatever)
+//   },
+//
+//   (accessToken, refreshToken, profile, next) => {   // 2nd arg -> callback
+//             // (will be called when a user allows us to log them in with Facebook)
+//       console.log('');
+//       console.log('--------FACEBOOK PROFILE INFO---------------');
+//       console.log('profile');
+//       console.log('');
+//
+//       UserModel.findOne(
+//         { facebookId: profile.id },
+//
+//         (err, userFromDb) => {
+//           if (err) {
+//             next(err);
+//             return;
+//           }
+//           // "userFromDb" will be empty if this is the first time the user logs in with Facebook,
+//
+//           //Check if they have logged in before
+//           if (userFromDb) {
+//             //If they have, just log them in
+//             next(null, userFromDb);
+//             return;
+//           }
+//
+//           // If its the first time they log in , Save them in the database
+//           const theUser = new UserModel({
+//             fullName: profile.displayName,
+//             facebookId: profile.id
+//           });
+//
+//           theUser.save((err) => {
+//             if (err) {
+//               next(err);
+//               return;
+//             }
+//
+//             // Now that they are saved, log them in.
+//             next(null, theUser);
+//
+//           });
+//         }
+//       );
+//
+//   }
+// ));
 
 //passport-google-oauth (log in with your Google account)
-const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-
-passport.use(new GoogleStrategy(
-  {   // 1st arg -> settings object
-    clientID: '1066385774412-blv6rodsu3rabnb06ob36lpo6r3ue10b.apps.googleusercontent.com',
-    clientSecret: '9oi9J-JvIYiWV-Y1USgqt4PJ',
-    callbackURL: '/auth/google/callback'    // our route (made up whatever)
-  },
-
-  (accessToken, refreshToken, profile, next) => {   // 2nd arg -> callback
-            // (will be called when a user allows us to log them in with Facebook)
-      console.log('');
-      console.log('--------GOOGLE PROFILE INFO---------------');
-      console.log('profile');
-      console.log('');
-
-      UserModel.findOne(
-        { googleId: profile.id },
-
-        (err, userFromDb) => {
-          if (err) {
-            next(err);
-            return;
-          }
-          // "userFromDb" will be empty if this is the first time the user logs in with Facebook,
-
-          //Check if they have logged in before
-          if (userFromDb) {
-            //If they have, just log them in
-            next(null, userFromDb);
-            return;
-          }
-
-          // If its the first time they log in , Save them in the database
-          const theUser = new UserModel({
-            fullName: profile.displayName,
-            googleId: profile.id
-          });
-
-          if (theUser.fullName === undefined) {
-            theUser.fullName = profile.emails[0].value;
-          }
-
-          theUser.save((err) => {
-            if (err) {
-              next(err);
-              return;
-            }
-
-            // Now that they are saved, log them in.
-            next(null, theUser);
-
-          });
-        }
-      );
-
-  }
-));
+// const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+//
+// passport.use(new GoogleStrategy(
+//   {   // 1st arg -> settings object
+//     clientID: '1066385774412-blv6rodsu3rabnb06ob36lpo6r3ue10b.apps.googleusercontent.com',
+//     clientSecret: '9oi9J-JvIYiWV-Y1USgqt4PJ',
+//     callbackURL: '/auth/google/callback'    // our route (made up whatever)
+//   },
+//
+//   (accessToken, refreshToken, profile, next) => {   // 2nd arg -> callback
+//             // (will be called when a user allows us to log them in with Facebook)
+//       console.log('');
+//       console.log('--------GOOGLE PROFILE INFO---------------');
+//       console.log('profile');
+//       console.log('');
+//
+//       UserModel.findOne(
+//         { googleId: profile.id },
+//
+//         (err, userFromDb) => {
+//           if (err) {
+//             next(err);
+//             return;
+//           }
+//           // "userFromDb" will be empty if this is the first time the user logs in with Facebook,
+//
+//           //Check if they have logged in before
+//           if (userFromDb) {
+//             //If they have, just log them in
+//             next(null, userFromDb);
+//             return;
+//           }
+//
+//           // If its the first time they log in , Save them in the database
+//           const theUser = new UserModel({
+//             fullName: profile.displayName,
+//             googleId: profile.id
+//           });
+//
+//           if (theUser.fullName === undefined) {
+//             theUser.fullName = profile.emails[0].value;
+//           }
+//
+//           theUser.save((err) => {
+//             if (err) {
+//               next(err);
+//               return;
+//             }
+//
+//             // Now that they are saved, log them in.
+//             next(null, theUser);
+//
+//           });
+//         }
+//       );
+//
+//   }
+// ));

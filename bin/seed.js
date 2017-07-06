@@ -6,16 +6,24 @@ const Restaurant = require('../models/restaurant-model.js');
 
 const restaurantInfoArray = [
   {
-    restaurantName: ,
-    cuisine:
+    restaurantName: "La Moon",
+    cuisine: "Columbian"
   },
   {
-    restaurantName: ,
-    cuisine:
+    restaurantName: "Blue Tree Juice",
+    cuisine: "Juice Bar"
   },
   {
-    restaurantName: ,
-    cuisine:
+    restaurantName: "Stanzione 87",
+    cuisine: "Pizza"
+  },
+  {
+    restaurantName: "Doraku",
+    cuisine: "Sushi"
+  },
+  {
+    restaurantName: "Burger and Beer",
+    cuisine: "Burgers"
   },
 ];
 
