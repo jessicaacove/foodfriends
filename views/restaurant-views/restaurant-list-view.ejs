@@ -14,18 +14,16 @@
   <% if (x%4 === 1 || x === 1) { %>
     <div class="row">
   <% } %>
-    <form name="restaurant-form" method="post" action="/restaurant">
-    <a href="/restaurant">
-    <div class="col-md-3" onClick="document.forms['restaurant-form'].submit();">
-      <a class="portfolio-item" style="background-image: url(images/portfolio-1.jpg);" href="">
+    <!-- <form name="restaurant-form" method="post" action="/restaurant/<%= restaurant._id %>/pair"> -->
+    <div class="col-md-3">
+      <a class="portfolio-item" style="background-image: url(images/portfolio-1.jpg);" href="/selected-restaurant/<%= restaurant._id %>">
         <div class="details">
           <h4 name="restaurantName"><%= restaurant.restaurantName %></h4>
           <span><%= restaurant.cuisine %></span>
         </div>
       </a>
     </div>
-  </a>
-  </form>
+  <!-- </form> -->
   <% if (x%4 === 0) { %>
   </div>
   <% } %>

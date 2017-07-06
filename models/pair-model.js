@@ -7,12 +7,15 @@ const Schema = mongoose.Schema;
 
 const PairSchema = new Schema(
 {
-  restaurantName: {
+  restaurantId: {
+    type: String
+  },
+  user1Id: {
+    type: String
+  },
+  user2Id: {
     type: String
   }
-  // username: {
-  //   type: String
-  // }
 });
 
 

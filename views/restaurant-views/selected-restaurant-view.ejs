@@ -1,1 +1,5 @@
-<h2> You selected something. </h2>
+<h2> <%= restaurant.restaurantName %> </h2>
+<h3> <%= restaurant.cuisine %> </h3>
+
+<a href="/pairing/<%= restaurant._id %>"> Select Restaurant </a>
+<a href="/restaurantlist"> Return to List </a>
