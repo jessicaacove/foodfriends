@@ -7,7 +7,8 @@ const Restaurant = require('../models/restaurant-model.js');
 const restaurantInfoArray = [
   {
     restaurantName: "La Moon",
-    cuisine: "Columbian"
+    cuisine: "Colombian",
+    logoPhoto: "/images/restaurant-logos/lamoonlogo.jpg"
   },
   {
     restaurantName: "Blue Tree Juice",
@@ -24,6 +25,18 @@ const restaurantInfoArray = [
   {
     restaurantName: "Burger and Beer",
     cuisine: "Burgers"
+  },
+  {
+    restaurantName: "La Sandwicherie",
+    cuisine: "Sandwiches and Salads"
+  },
+  {
+    restaurantName: "American Harvest",
+    cuisine: "New American"
+  },
+  {
+    restaurantName: "Pubbelly Sushi",
+    cuisine: "Sushi"
   },
 ];
 

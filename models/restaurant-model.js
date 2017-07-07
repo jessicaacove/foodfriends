@@ -12,6 +12,9 @@ const RestaurantSchema = new Schema(
   },
   cuisine: {
     type: String
+  },
+  logoPhoto: {
+    type: String
   }
 });
 
