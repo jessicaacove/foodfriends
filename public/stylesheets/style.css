@@ -778,7 +778,23 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #testimonials .profile .pic img {
-  max-width: 100%;
+  width: 100%;
+}
+
+#testimonials button {
+  margin-top: 30px;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 2px;
+  transition: 0.5s;
+  background: none;
+  border: 2px solid #03C4EB;
+  color: #03C4EB !important;
 }
 
 #testimonials .profile h4 {
