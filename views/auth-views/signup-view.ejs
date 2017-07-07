@@ -1,30 +1,51 @@
-<h2> Sign Up </h2>
 
-<% if (typeof messageForDumbUsers === 'string') { %>
- <p class="error-message"> <%= messageForDumbUsers %></p>
-<% } %>
+<section id="signup">
+  <div class="container wow fadeInUp">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="section-title">Sign Up</h3>
+        <div class="section-title-divider"></div>
+        <% if (typeof messageForDumbUsers === 'string') { %>
+         <p class="error-message section-description"> <%= messageForDumbUsers %></p>
+        <% } else {%>
+        <p class="section-description">Please provide your name and account information. </p>
+        <% } %>
+      </div>
+    </div>
 
-<form id="form" method="post" action="/signup">
-  <label for="full-name-input"> Your Name </label>
-  <input id="full-name-input" type="text" name="signupFullName"
-      placeholder="Dakota Fanning">
-  <br>
+    <div class="row">
+      <div class="col-md-5">
+      </div>
+      <div class="col-md-2">
+        <div class= "centerdiv">
+          <form id="form" method="post" action="/signup">
+            <label for="first-name-input"> First Name </label>
+            <input id="first-name-input" type="text" name="signupFirstName"
+                placeholder="Dakota Fanning">
+            <br>
 
-  <label for="username-input"> Username </label>
-  <input id="username-input" type="text" name="signupUsername"
-      placeholder="fanningfan88">
-  <br>
+            <label for="last-name-input"> Last Name </label>
+            <input id="last-name-input" type="text" name="signupLastName"
+                placeholder="Dakota Fanning">
+            <br>
 
-  <label for="password-input"> Password </label>
-  <input id="password-input" type="password" name="signupPassword"
-      placeholder="************">
-  <br>
+            <label for="username-input"> Username </label>
+            <input id="username-input" type="text" name="signupUsername"
+                placeholder="fanningfan88">
+            <br>
 
-  <button> Sign Up </button>
-</form>
+            <label for="password-input"> Password </label>
+            <input id="password-input" type="password" name="signupPassword"
+                placeholder="************">
+            <br>
 
-<!-- <a href="/auth/facebook"> Log In with Facebook </a>
-<br>
+            <button> Sign Up </button>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-5">
+      </div>
+    </div>
 
-<a href="/auth/google"> Log In with Google </a>
-<br> -->
+  </div>
+</section>

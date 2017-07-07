@@ -18,13 +18,7 @@ const UserSchema = new Schema(
   },
   encryptedPassword: {
     type: String
-  },
-  googleId: {
-    type: String
-  },
-  facebookId: {
-    type: String
-  },
+  }
 });
 
 

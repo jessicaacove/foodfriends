@@ -27,22 +27,30 @@
   <body>
     <div id="preloader"></div>
 
+  <% if (typeof currentUser === 'object') { %>
+    <header id="header">
+      <div class="container">
 
-    <!-- <header>
-      <h1> Food </h1>
+        <div id="logo" class="pull-left">
+          <a href="#hero"><img src="/images/textlogo.png" alt="" title=""></a>
+          <!-- Uncomment below if you prefer to use a text image -->
+          <!--<h1><a href="#hero">Header 1</a></h1>-->
+        </div>
 
-      <nav>
-        <a href="/"> Home </a>
-        <br>
-
-        <a href="/signup"> Sign Up </a>
-        <br>
-
-        <a href="/login"> Log In </a>
-        <br>
-      </nav>
-    </header> -->
-
+        <nav id="nav-menu-container">
+          <ul class="nav-menu">
+            <li class="menu-active"><a href="/">Home</a></li>
+            <!-- <li><a href="#about">About Us</a></li> -->
+            <li><a href="/restaurantlist">Restaurants</a></li>
+            <!-- <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#team">Team</a></li> -->
+            <li><a href="/logout">Log Out</a></li>
+          </ul>
+        </nav><!-- #nav-menu-container -->
+      </div>
+    </header><!-- #header -->
+  <% } %>
 
     <%- body %>
 

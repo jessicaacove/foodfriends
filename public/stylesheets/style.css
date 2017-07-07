@@ -91,11 +91,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .hero-logo {
-  margin: 20px;
+  margin: 10px 20px 10px 20px;
 }
 
 #hero .hero-logo img {
-  max-width: 100%;
+  max-width: 50%;
 }
 
 #hero .hero-container {
@@ -108,11 +108,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero h1 {
-  margin: 30px 0 10px 0;
-  font-weight: 700;
+  margin: 10px 0 10px 0;
+  font-weight: 100;
   line-height: 48px;
-  text-transform: uppercase;
+  text-transform: lowercase;
   color: #fff;
+  font-size: 30px !important;
 }
 
 @media (max-width: 768px) {
@@ -208,7 +209,8 @@ h1, h2, h3, h4, h5, h6 {
 #header #logo img {
   padding: 0;
   margin: 0;
-  max-height: 50px;
+  max-height: 30px;
+  margin-top: 12px;
 }
 
 @media (max-width: 768px) {
@@ -476,6 +478,92 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 20px;
 }
 
+
+/* Login Section
+--------------------------------*/
+#login {
+  background: #f6f6f6;
+  padding: 80px 0;
+}
+
+#login button {
+  width: 95%;
+  margin-top: 20px;
+}
+
+
+/* Signup Section
+--------------------------------*/
+#signup {
+  background: #f6f6f6;
+  padding: 80px 0;
+}
+
+#signup button {
+  width: 95%;
+  margin-top: 20px;
+}
+
+#signup .error-message {
+  color: red !important;
+}
+
+
+/*#login .profile {
+  text-align: center;
+}
+
+#login .profile .pic {
+  border-radius: 50%;
+  border: 6px solid #fff;
+  margin-bottom: 15px;
+  overflow: hidden;
+  height: 240px;
+  width: 240px;
+  margin: 0 auto;
+}
+
+#login .profile .pic img {
+  max-width: 100%;
+}
+
+#login .profile h4 {
+  font-weight: 700;
+  color: #03C4EB;
+  margin-bottom: 5px;
+  padding-top: 10px;
+}
+
+#login .profile span {
+  color: #333333;
+}
+
+#login .quote {
+  position: relative;
+  background: #fff;
+  padding: 60px;
+  margin-top: 40px;
+  font-size: 16px;
+  font-style: italic;
+  border-radius: 5px;
+}
+
+#login .quote b {
+  display: inline-block;
+  font-size: 22px;
+  left: -9px;
+  position: relative;
+  top: -8px;
+}
+
+#login .quote small {
+  display: inline-block;
+  right: -9px;
+  position: relative;
+  top: 4px;
+}*/
+
+
 /* Get Started Section
 --------------------------------*/
 #about {
@@ -670,6 +758,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 80px 0;
 }
 
+#testimonials button {
+  width: 95%;
+  margin-top: 20px;
+}
+
 #testimonials .profile {
   text-align: center;
 }
@@ -679,8 +772,9 @@ body.mobile-nav-active #mobile-nav-toggle {
   border: 6px solid #fff;
   margin-bottom: 15px;
   overflow: hidden;
-  height: 260px;
-  width: 260px;
+  height: 240px;
+  width: 240px;
+  margin: 0 auto;
 }
 
 #testimonials .profile .pic img {
@@ -691,6 +785,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-weight: 700;
   color: #03C4EB;
   margin-bottom: 5px;
+  padding-top: 10px;
 }
 
 #testimonials .profile span {
@@ -738,6 +833,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 15px;
   overflow: hidden;
   height: 260px;
+  background-size: cover;
 }
 
 #team .member .pic img {
@@ -754,6 +850,53 @@ body.mobile-nav-active #mobile-nav-toggle {
   display: block;
   font-size: 13px;
 }
+
+#team .choosebutton {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 2px;
+  transition: 0.5s;
+  margin: 10px;
+  background: none;
+  border: 2px solid #03C4EB;
+  color: #03C4EB !important;
+}
+
+#team .choosebutton:hover {
+  background: #03C4EB;
+  border: 2px solid #03C4EB;
+  color: #fff !important;
+}
+
+#team .backbutton {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 2px;
+  transition: 0.5s;
+  margin: 10px;
+  background: none;
+  border: 2px solid #03C4EB;
+  color: #03C4EB !important;
+}
+
+#team .backbutton:hover {
+  background: #03C4EB;
+  border: 2px solid #03C4EB;
+  color: #fff !important;
+}
+
 
 #team .member .social {
   margin-top: 15px;

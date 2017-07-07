@@ -42,7 +42,8 @@ router.post('/signup', (req, res, next) => {
       const scrambledPassword = bcrypt.hashSync(req.body.signupPassword, salt);
 
       const theUser = new UserModel({
-        fullName: req.body.signupFullName,
+        firstName: req.body.signupFirstName,
+        lastName: req.body.signupLastName,
         username: req.body.signupUsername,
         encryptedPassword: scrambledPassword
       });
@@ -88,39 +89,8 @@ router.get('/logout', (req, res, next) => {
 });
 
 
-// SOCIAL LOGINS -------------
-                                          // determined by v the npm package
-// router.get('/auth/facebook', passport.authenticate('facebook'));
-// router.get('/auth/facebook/callback',
-// passport.authenticate(
-//   'facebook',        // 1st arg -> name of the strategy
-//   {                 // 2nd arg ->
-//     successRedirect: '/special',
-//     failureRedirect: '/login'
-//   }
-// ));
-//
-// router.get('/auth/google',
-//   passport.authenticate(
-//     'google',
-//     {
-//       scope: [
-//         "https://www.googleapis.com/auth/plus.login",
-//         "https://www.googleapis.com/auth/plus.profile.emails.read"
-//       ]
-//     }
-//   )
-// );
-//
-// router.get('/auth/google/callback',
-// passport.authenticate(
-//   'google',        // 1st arg -> name of the strategy
-//   {                 // 2nd arg ->
-//     successRedirect: '/special',
-//     failureRedirect: '/login'
-//   }
-// ));
-// END SOCIAL LOGINS ----------
+
+
 
 
 

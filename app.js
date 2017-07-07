@@ -8,11 +8,11 @@ const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 const session      = require('express-session');
 const passport     = require('passport');
-const dotenv = require("dotenv").config();
+const dotenv       = require("dotenv").config();
 
 require('./config/passport-config.js');
 
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect('mongodb://localhost/foodfriends');
 
 const app = express();
 
