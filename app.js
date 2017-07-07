@@ -12,7 +12,7 @@ const dotenv       = require("dotenv").config();
 
 require('./config/passport-config.js');
 
-mongoose.connect('mongodb://localhost/foodfriends');
+mongoose.connect(process.env.MONGODB_URI);
 
 const app = express();
 
